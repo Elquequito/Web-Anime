@@ -1,0 +1,153 @@
+/* Estilos generales */
+
+body {
+    position: relative;
+    background-color: #121212; /* Fondo negro */
+    min-height: 100vh;
+    padding-bottom: 0; /* Espacio para el footer */
+    color: #ffffff; /* Texto blanco */
+}
+
+header {
+    background: linear-gradient(135deg, #525252, #6e6e6e);
+    height: 85px;
+    padding: 30px 10% 100px;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    position: relative; /* Añadido para controlar el gradiente */
+    background-color: #2c2c2c; /* Fondo gris oscuro */
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: -2px; /* Ajusta según el diseño */
+    left: -2px; /* Ajusta según el diseño */
+    right: -2px; /* Ajusta según el diseño */
+    bottom: -2px; /* Ajusta según el diseño */
+    z-index: -1;
+    background: linear-gradient(135deg, #525252, #6e6e6e);
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    opacity: 0; /* Inicialmente invisible */
+}
+
+.card:hover:before {
+    opacity: 1; /* Hace visible el gradiente al pasar el mouse */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000; /* Rojo */
+}
+
+.card-text {
+    font-size: 1.2rem;
+    color: #dcdcdc; /* Gris claro */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según sea necesario para todas las imágenes */
+    object-fit: cover;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+    display: block; /* Añadir para asegurar que la imagen se comporte como bloque */
+    margin: 0 auto; /* Añadir para centrar horizontalmente la imagen */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el texto sobre la imagen */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.carousel-caption h1,
+.carousel-caption p {
+    color: white; /* Texto blanco para mejor legibilidad */
+}
+
+/* Estilos para el banner con imágenes deslizantes */
+.banner-slider {
+    width: 100%;
+    height: 500px; /* Altura deseada para el carrusel */
+    overflow: hidden;
+    position: relative;
+    background-color: #222; /* Color de fondo oscuro detrás de las imágenes */
+}
+
+.banner-slider img {
+    width: auto; /* Ajusta el ancho automáticamente */
+    max-height: 400px; /* Altura máxima del carrusel reducida */
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7; /* Opacidad para un efecto más oscuro */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.banner-slider img.active {
+    opacity: 1;
+}
+
+/* Estilos para los controles de navegación del banner */
+.banner-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.banner-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.banner-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos para los botones de los autos */
+.btn-tesla {
+    background-color: #000000; /* Rojo Tesla */
+    border-color: #000000;
+}
+
+.btn-mustang {
+    background-color: #1e73be; /* Azul Mustang */
+    border-color: #1e73be;
+}
+
+.btn-porsche {
+    background-color: #07c900; /* Amarillo Porsche */
+    border-color: #07c900;
+}
+
+.btn-tesla:hover,
+.btn-mustang:hover,
+.btn-porsche:hover {
+    opacity: 0.8;
+}
